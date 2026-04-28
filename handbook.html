@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Industry Handbook | The Regulated Path</title>
+<meta name="description" content="The foundational guide for professionals entering Regulated Industries. Industry overview, resume and LinkedIn templates, glossary, and Job Search Strategy Guide." />
+
+<!--
+  ============================================================================
+  HANDBOOK PAGE CONFIGURATION
+  ============================================================================
+  Replace before deploying:
+  1. REPLACE_GA4_MEASUREMENT_ID       Same GA4 ID used on homepage
+  2. REPLACE_EMAIL_SERVICE_FORM_ACTION ConvertKit/Mailchimp form action URL
+  3. REPLACE_STRIPE_HANDBOOK_URL       $97 one-time Stripe Payment Link
+
+  Stripe Payment Link setup:
+    stripe.com > Payment Links > New > one-time, $97
+    Product name: "The Industry Handbook"
+    After payment redirect: set to a /thank-you page or back to /
+  ============================================================================
+-->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=REPLACE_GA4_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'REPLACE_GA4_MEASUREMENT_ID', { send_page_view: true });
+
+  function trackCTA(itemName, itemCategory, value) {
+    gtag('event', 'select_content', {
+      content_type: itemCategory,
+      item_id: itemName,
+      value: value || 0,
+      currency: 'USD'
+    });
+    gtag('event', itemName + '_clicked', {
+      item_category: itemCategory,
+      value: value || 0,
+      currency: 'USD'
+    });
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #009B8B; --teal-deep: #006d62; --green: #166340;
+    --gold: #C97A1E; --gold-soft: #e8a050;
+    --cream: #FAF7F1; --white: #FFFFFF; --soft: #F2F7F4;
+    --ink: #0e1a17; --ink-2: #2a3530; --muted: #6b7670;
+    --line: rgba(14, 26, 23, 0.12);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--cream); color: var(--ink);
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 247, 241, 0.92);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; max-width: 1180px; margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px;
+    letter-spacing: -0.01em; color: var(--ink); text-decoration: none;
+  }
+  .logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    color: var(--ink-2); text-decoration: none; font-size: 14px;
+    font-weight: 500; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--ink); color: var(--cream);
+    padding: 10px 20px; border-radius: 999px; font-size: 13px;
+  }
+  .nav-cta:hover { background: var(--teal-deep); color: var(--white); }
+  @media (max-width: 720px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    padding: 24px 0 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .breadcrumb a {
+    color: var(--muted); text-decoration: none;
+  }
+  .breadcrumb a:hover { color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    padding: 32px 0 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute;
+    top: -200px; right: -200px; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,155,139,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { max-width: 800px; position: relative; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--green);
+    text-transform: uppercase; letter-spacing: 0.18em;
+    margin-bottom: 24px;
+    padding: 6px 14px; background: rgba(22, 99, 64, 0.08);
+    border-radius: 999px;
+  }
+  .eyebrow::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--teal); border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(0,155,139,0.2);
+  }
+  h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(36px, 5vw, 60px); line-height: 1.05;
+    letter-spacing: -0.025em; color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    font-family: 'Syne', sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .hero p.lede {
+    font-size: 19px; color: var(--ink-2);
+    max-width: 640px; margin-bottom: 0;
+  }
+
+  /* LEAD CAPTURE SECTION */
+  .lead-section {
+    padding: 0 0 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .lead-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 48px;
+    max-width: 640px;
+    margin: 0 auto;
+    box-shadow: 0 30px 80px -40px rgba(14, 26, 23, 0.25);
+    position: relative;
+  }
+  .lead-card::before {
+    content: '01 / 02';
+    position: absolute;
+    top: -12px; left: 28px;
+    background: var(--teal);
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 6px;
+    letter-spacing: 0.1em;
+  }
+  .lead-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px; font-weight: 700;
+    margin-bottom: 8px; color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .lead-card .intro {
+    color: var(--ink-2); font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .lead-form {
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .lead-form label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600;
+    color: var(--muted); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .form-group { display: flex; flex-direction: column; }
+  .lead-form input, .lead-form select {
+    width: 100%; padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-family: inherit; font-size: 15px;
+    background: var(--soft);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .lead-form input:focus, .lead-form select:focus {
+    outline: none; border-color: var(--teal); background: var(--white);
+  }
+  .lead-form button {
+    background: var(--teal); color: var(--white);
+    border: none; padding: 16px;
+    border-radius: 10px;
+    font-family: inherit; font-size: 16px; font-weight: 600;
+    cursor: pointer; margin-top: 8px;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .lead-form button:hover {
+    background: var(--teal-deep); transform: translateY(-1px);
+  }
+  .lead-form button:disabled {
+    background: var(--muted); cursor: not-allowed; transform: none;
+  }
+  .privacy {
+    font-size: 12px; color: var(--muted);
+    text-align: center; margin-top: 8px;
+  }
+
+  .lead-card.completed {
+    background: var(--soft);
+    border-color: var(--teal);
+    text-align: center;
+  }
+  .lead-card.completed .lead-form { display: none; }
+  .lead-card.completed .completion-msg {
+    display: block !important;
+  }
+  .completion-msg {
+    display: none;
+    padding: 24px 0;
+  }
+  .completion-msg .check {
+    width: 56px; height: 56px;
+    background: var(--teal); color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 28px;
+  }
+  .completion-msg h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px; color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .completion-msg p { color: var(--ink-2); font-size: 14px; }
+
+  /* GATED CONTENT */
+  .gated-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.6s ease, max-height 0.8s ease;
+  }
+  .gated-content.revealed {
+    opacity: 1;
+    max-height: 10000px;
+  }
+
+  /* SECTION STYLES */
+  section.detail-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+  }
+  .section-head { margin-bottom: 48px; max-width: 720px; }
+  .section-head .step-marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .section-head h2 {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 42px); line-height: 1.1;
+    letter-spacing: -0.02em; color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .section-head p { font-size: 17px; color: var(--ink-2); }
+
+  /* INCLUDED DOCUMENTS GRID */
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 720px) {
+    .docs-grid { grid-template-columns: 1fr; }
+  }
+  .doc-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .doc-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0,155,139,0.3);
+    box-shadow: 0 20px 40px -20px rgba(14, 26, 23, 0.15);
+  }
+  .doc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .doc-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px; font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .doc-card p { color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+
+  /* WHO IT'S FOR */
+  .audience-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 720px) {
+    .audience-list { grid-template-columns: 1fr; }
+  }
+  .audience-card {
+    background: var(--soft);
+    padding: 24px;
+    border-radius: 14px;
+    border-left: 3px solid var(--teal);
+  }
+  .audience-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px; font-weight: 700;
+    margin-bottom: 6px; color: var(--ink);
+  }
+  .audience-card p { font-size: 13px; color: var(--ink-2); }
+
+  /* OUTCOMES */
+  .outcomes {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 800px;
+  }
+  @media (max-width: 720px) {
+    .outcomes { grid-template-columns: 1fr; }
+  }
+  .outcomes li {
+    padding-left: 36px; position: relative;
+    font-size: 16px; color: var(--ink-2); line-height: 1.5;
+  }
+  .outcomes li::before {
+    content: '✓';
+    position: absolute; left: 0; top: -2px;
+    width: 24px; height: 24px;
+    background: var(--teal); color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+
+  /* PRICING CARD */
+  .pricing-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+  }
+  .pricing-card {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 24px;
+    padding: 56px 48px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-card::before {
+    content: ''; position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(201,122,30,0.25), transparent 70%);
+  }
+  .pricing-card .pricing-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.2em;
+    color: var(--gold-soft);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .pricing-card h2 {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 32px; line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+  .price {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--cream);
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .price-note {
+    font-size: 14px;
+    color: rgba(250,247,241,0.7);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .price-includes {
+    list-style: none;
+    text-align: left;
+    max-width: 360px;
+    margin: 0 auto 32px;
+    display: flex; flex-direction: column; gap: 10px;
+    position: relative;
+  }
+  .price-includes li {
+    padding-left: 28px; position: relative;
+    font-size: 14px; color: rgba(250,247,241,0.85);
+  }
+  .price-includes li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--gold-soft); font-weight: 700;
+  }
+  .pay-button {
+    background: var(--gold); color: var(--ink);
+    padding: 18px 40px; border-radius: 12px;
+    text-decoration: none; font-weight: 700; font-size: 17px;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: background 0.2s, transform 0.15s;
+    position: relative;
+  }
+  .pay-button:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+  }
+
+  .secure-line {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(250,247,241,0.55);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+
+  /* FAQ */
+  .faq-list { max-width: 820px; margin: 0 auto; }
+  details {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0; cursor: pointer;
+  }
+  details summary {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--ink); list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after {
+    content: '+'; font-size: 24px; color: var(--teal);
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p {
+    margin-top: 12px; color: var(--ink-2);
+    font-size: 15px; line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: var(--cream);
+    padding: 56px 0 32px; margin-top: 0;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px; margin-bottom: 40px;
+  }
+  @media (max-width: 720px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  footer h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 16px; letter-spacing: 0.05em;
+    color: var(--gold-soft); text-transform: uppercase;
+  }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  footer a {
+    color: rgba(250,247,241,0.75); text-decoration: none;
+    font-size: 14px; transition: color 0.2s;
+  }
+  footer a:hover { color: var(--gold-soft); }
+  .footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px; font-weight: 800; margin-bottom: 12px;
+  }
+  .footer-brand span { color: var(--teal); }
+  .footer-bottom {
+    border-top: 1px solid rgba(250,247,241,0.1);
+    padding-top: 24px;
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: rgba(250,247,241,0.5);
+  }
+  @media (max-width: 720px) {
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">The Regulated <span>Path</span></a>
+    <div class="nav-links">
+      <a href="/#programs">Programs</a>
+      <a href="/#about">About</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/" class="nav-cta">Home</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">HOME</a> &nbsp;/&nbsp; <a href="/#programs">PROGRAMS</a> &nbsp;/&nbsp; THE INDUSTRY HANDBOOK
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Tier 01 · Foundational</div>
+      <h1>The Industry Handbook</h1>
+      <div class="subtitle">Foundational Principles for Aspiring Professionals</div>
+      <p class="lede">
+        The foundational guide for professionals entering Regulated Industries. Built by an industry insider for career-changers, recent graduates, and first-time entrants who want a real understanding of how this world works before they start applying.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE: Step 1 of the funnel -->
+<section class="lead-section">
+  <div class="container">
+    <div class="lead-card" id="leadCard">
+      <h3>Get the Full Details</h3>
+      <p class="intro">
+        Enter your information to unlock the complete Handbook breakdown, what's inside each document, and instant enrollment access.
+      </p>
+
+      <!--
+        REPLACE_EMAIL_SERVICE_FORM_ACTION below with your ConvertKit, Mailchimp, or Beehiiv form action URL.
+      -->
+      <form class="lead-form" id="leadForm" data-action="REPLACE_EMAIL_SERVICE_FORM_ACTION">
+        <div class="form-group">
+          <label for="first_name">First name</label>
+          <input type="text" id="first_name" name="first_name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="career_stage">Where are you in your career?</label>
+          <select id="career_stage" name="career_stage" required>
+            <option value="">Select one...</option>
+            <option value="student">Student or recent graduate</option>
+            <option value="career_changer">Career-changer from another field</option>
+            <option value="adjacent">Currently in an adjacent field (healthcare, science)</option>
+            <option value="industry_pivot">Already in industry, exploring new track</option>
+          </select>
+        </div>
+        <input type="hidden" name="program_interest" value="The Industry Handbook" />
+        <button type="submit">
+          Unlock the Handbook Details
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12m0 0L7 1m6 6l-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="privacy">No spam. You can unsubscribe at any time.</div>
+      </form>
+
+      <div class="completion-msg">
+        <div class="check">✓</div>
+        <h4>Details unlocked.</h4>
+        <p>Scroll down to see what's included and to enroll.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GATED CONTENT: Step 2 of the funnel, revealed after lead capture -->
+<div class="gated-content" id="gatedContent">
+
+  <!-- WHAT'S INSIDE -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="step-marker">02 / 02 · WHAT'S INSIDE</div>
+        <h2>Four documents. One foundation.</h2>
+        <p>Every document was built from the ground up for Regulated Industries. No generic career advice. No filler.</p>
+      </div>
+
+      <div class="docs-grid">
+        <div class="doc-card">
+          <div class="doc-num">DOCUMENT 01</div>
+          <h3>Industry Overview Guide</h3>
+          <p>A 30-page primer on what Regulated Industries actually are, the four core career tracks, salary expectations by role and region, and where the real opportunities sit in 2026 and beyond.</p>
+        </div>
+        <div class="doc-card">
+          <div class="doc-num">DOCUMENT 02</div>
+          <h3>Resume & LinkedIn Templates</h3>
+          <p>Templates engineered for hiring managers in Regulatory, Quality, and Clinical functions. Optimized for the specific keywords ATS filters scan for in this industry.</p>
+        </div>
+        <div class="doc-card">
+          <div class="doc-num">DOCUMENT 03</div>
+          <h3>The Industry Glossary</h3>
+          <p>The complete glossary of terms recruiters and hiring managers use. From 510(k) to GxP to PMS to MDR. Walk into any conversation able to follow it.</p>
+        </div>
+        <div class="doc-card">
+          <div class="doc-num">DOCUMENT 04</div>
+          <h3>Job Search Strategy Guide</h3>
+          <p>The 90-day job search plan for Regulated Industries. Where to look, who to talk to, how to position yourself, and how to handle the technical interview.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="detail-section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-head">
+        <div class="step-marker">WHO THIS IS FOR</div>
+        <h2>Built for the people most likely to succeed.</h2>
+      </div>
+      <div class="audience-list">
+        <div class="audience-card">
+          <h4>Career-Changers</h4>
+          <p>Working professionals from finance, tech, sales, or other fields ready to pivot into a more meaningful and stable career path.</p>
+        </div>
+        <div class="audience-card">
+          <h4>Recent Graduates</h4>
+          <p>Biology, chemistry, biomedical engineering, or other science majors who don't want to be stuck in a lab and want a real corporate path.</p>
+        </div>
+        <div class="audience-card">
+          <h4>Adjacent Professionals</h4>
+          <p>Nurses, lab techs, pharmacists, or healthcare professionals ready to move into the corporate side of the industry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="step-marker">WHAT YOU'LL WALK AWAY WITH</div>
+        <h2>By the end of the Handbook, you will be able to:</h2>
+      </div>
+      <ul class="outcomes">
+        <li>Speak fluently about the four major career tracks in Regulated Industries</li>
+        <li>Read a job description and understand exactly what they want</li>
+        <li>Position your resume so hiring managers in this industry take it seriously</li>
+        <li>Identify which track and which roles fit your background best</li>
+        <li>Build a 90-day plan to land your first interview</li>
+        <li>Walk into networking conversations with the right vocabulary</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRICING & PAYMENT -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-card">
+        <div class="pricing-eyebrow">ENROLL TODAY</div>
+        <h2>The Industry Handbook</h2>
+        <div class="price">$97</div>
+        <div class="price-note">One-time payment. Lifetime access.</div>
+        <ul class="price-includes">
+          <li>All four foundational documents</li>
+          <li>Instant download after payment</li>
+          <li>Lifetime access to future updates</li>
+          <li>Free entry to the email community</li>
+        </ul>
+        <!--
+          REPLACE_STRIPE_HANDBOOK_URL with your Stripe Payment Link.
+          Setup: stripe.com > Payment Links > New > one-time, $97
+        -->
+        <a href="REPLACE_STRIPE_HANDBOOK_URL"
+           class="pay-button"
+           onclick="trackCTA('handbook_purchase', 'product', 97)">
+          Enroll Now
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12m0 0L7 1m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="secure-line">SECURE CHECKOUT VIA STRIPE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="detail-section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-head" style="text-align: center; margin: 0 auto 48px;">
+        <div class="step-marker" style="text-align: center;">COMMON QUESTIONS</div>
+        <h2>Before you enroll.</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How do I access the documents after I pay?</summary>
+          <p>Immediately after Stripe confirms payment, you'll receive an email with download links to all four documents. The downloads are instant. No waiting period.</p>
+        </details>
+        <details>
+          <summary>Are the templates compatible with what I use?</summary>
+          <p>The resume and LinkedIn templates come in editable Word and Google Docs formats. The other documents are PDFs you can save, print, or reference anytime.</p>
+        </details>
+        <details>
+          <summary>Is The Handbook a substitute for the full course?</summary>
+          <p>No. The Handbook gives you the foundation. The Break Into Regulated Industries course goes much deeper with eight modules, the Knowledge Trainer App, and structured learning paths. Many students start with The Handbook to validate their interest, then enroll in the full course.</p>
+        </details>
+        <details>
+          <summary>What if it's not what I expected?</summary>
+          <p>Because the materials are digital and delivered instantly, The Handbook is non-refundable once accessed. If you have questions before purchase, reply to the welcome email and ask.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">The Regulated <span>Path</span></div>
+        <p style="font-size: 14px; color: rgba(250,247,241,0.65); max-width: 320px;">
+          The career platform for breaking into Regulatory Affairs, Quality, and Clinical roles in medical devices, pharma, and biotech.
+        </p>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/handbook">The Handbook</a></li>
+          <li><a href="/course">Course + KT App</a></li>
+          <li><a href="/cohort">6-Week Cohort</a></li>
+          <li><a href="/coaching">Private Coaching</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@regulatedpath.com">hello@regulatedpath.com</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 The Regulated Path. All rights reserved.</div>
+      <div>Built for the next wave of industry professionals.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FUNNEL LOGIC: capture lead, then reveal gated content
+  const form = document.getElementById('leadForm');
+  const leadCard = document.getElementById('leadCard');
+  const gatedContent = document.getElementById('gatedContent');
+
+  function revealGatedContent() {
+    gatedContent.classList.add('revealed');
+    setTimeout(() => {
+      gatedContent.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }, 200);
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const action = form.dataset.action;
+
+    // Track the lead capture event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        method: 'handbook_page',
+        currency: 'USD',
+        value: 97
+      });
+    }
+
+    // Submit to email service in the background (non-blocking).
+    // no-cors mode is required for ConvertKit and Mailchimp.
+    if (action && !action.includes('REPLACE_')) {
+      try {
+        await fetch(action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+      } catch (err) {
+        // Even if the email service fails, still reveal content for good UX.
+        console.error('Email service error:', err);
+      }
+    }
+
+    // Remember they've already submitted so they don't have to redo it.
+    try {
+      localStorage.setItem('trp_lead_captured', 'true');
+      localStorage.setItem('trp_lead_email', formData.get('email'));
+      localStorage.setItem('trp_lead_name', formData.get('first_name'));
+    } catch (err) {}
+
+    // Show the completion state and reveal gated content
+    leadCard.classList.add('completed');
+    revealGatedContent();
+  });
+
+  // Auto-reveal for returning visitors who already submitted
+  try {
+    if (localStorage.getItem('trp_lead_captured') === 'true') {
+      leadCard.classList.add('completed');
+      revealGatedContent();
+    }
+  } catch (err) {}
+</script>
+
+</body>
+</html>
