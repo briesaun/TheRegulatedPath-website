@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Free orientation guide for breaking into regulated industries. Five career tracks, salary tables, keywords hiring managers scan for, interview questions, and a 90-Day Action Plan." />
+<title>Get the Career Starter Guide | The Regulated Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" />
+<style>
+  :root {
+    --ink:       #0f1a14;
+    --ink-2:     #3a4a40;
+    --teal:      #1a7a6e;
+    --teal-dark: #0f5c52;
+    --gold:      #c97a1e;
+    --gold-soft: #e8c98a;
+    --cream:     #faf7f1;
+    --white:     #ffffff;
+    --border:    rgba(15,26,20,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Top bar */
+  header {
+    background: rgba(250,247,241,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--teal); }
+  .back-link {
+    font-size: 14px;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--teal); }
+
+  /* Main */
+  main {
+    flex: 1;
+    padding: 48px 24px 64px;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* Free PDF tag */
+  .free-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 10px rgba(201,122,30,0.3);
+  }
+
+  h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(34px, 5.5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .subhead {
+    font-size: 18px;
+    color: var(--ink-2);
+    margin-bottom: 36px;
+    max-width: 600px;
+  }
+
+  /* Inside box */
+  .inside {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 32px 36px;
+    color: var(--cream);
+    margin-bottom: 36px;
+  }
+  .inside h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 18px;
+  }
+  .inside ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 28px;
+  }
+  @media (max-width: 600px) {
+    .inside ul { grid-template-columns: 1fr; }
+    .inside { padding: 26px 24px; }
+  }
+  .inside li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(250,247,241,0.92);
+  }
+  .inside li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+
+  /* Form card */
+  .form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 4px 24px rgba(15,26,20,0.06);
+  }
+  @media (max-width: 600px) {
+    .form-card { padding: 28px 24px; }
+  }
+  .form-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .form-card .form-intro {
+    font-size: 15px;
+    color: var(--ink-2);
+    margin-bottom: 22px;
+  }
+  .form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .form-card input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-card input:focus { border-color: var(--teal); }
+  .form-card input::placeholder { color: #9aaa9f; }
+  .form-card button {
+    width: 100%;
+    padding: 15px;
+    background: var(--teal);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 6px;
+  }
+  .form-card button:hover { background: var(--teal-dark); }
+  .disclaimer {
+    font-size: 12px;
+    color: #9aaa9f;
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  /* Confirmation state (shown after submit) */
+  .confirmation { display: none; }
+  body.submitted .form-card form { display: none; }
+  body.submitted .form-card .form-intro { display: none; }
+  body.submitted .form-card h3 { display: none; }
+  body.submitted .confirmation { display: block; }
+  body.submitted .disclaimer { display: none; }
+
+  .confirmation-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .confirmation-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--white);
+    stroke-width: 3;
+    fill: none;
+  }
+  .confirmation h3 {
+    display: block !important;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .confirmation p {
+    font-size: 15px;
+    color: var(--ink-2);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .confirmation .next-step {
+    margin-top: 24px;
+    text-align: center;
+  }
+  .confirmation .browse-btn {
+    display: inline-block;
+    padding: 13px 26px;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .confirmation .browse-btn:hover { background: var(--teal-dark); }
+
+  footer {
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">The Regulated <span>Path</span></a>
+    <a href="/" class="back-link">← Back to home</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <span class="free-tag">Free PDF</span>
+
+    <h1>The Regulated Path Career Starter Guide.</h1>
+
+    <p class="subhead">Free orientation for breaking into regulated industries. Pulled from the same playbook practitioners use to coach the next wave of Regulatory, Quality, and Clinical hires.</p>
+
+    <div class="inside">
+      <h2>What is inside</h2>
+      <ul>
+        <li>Five career tracks across medical devices, pharma, and biotech</li>
+        <li>Real salary tables by role and years of experience</li>
+        <li>The exact keywords hiring managers scan for</li>
+        <li>25 most common interview questions with guidance</li>
+        <li>Top certifications by track</li>
+        <li>Industry overview that connects Regulatory, Quality, and Clinical</li>
+        <li>90-Day Action Plan with weekly milestones</li>
+        <li>Preview of the full program suite</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <h3>Send me the free Guide.</h3>
+      <p class="form-intro">Drop your name and email and the PDF arrives in your inbox.</p>
+      <form id="lead-form" action="https://app.kit.com/forms/9370401/subscriptions" method="POST">
+        <input type="text" name="fields[first_name]" placeholder="First name" required />
+        <input type="email" name="email_address" placeholder="Email address" required />
+        <button type="submit">Send me the free Guide</button>
+      </form>
+      <p class="disclaimer">No spam. Unsubscribe anytime.</p>
+
+      <div class="confirmation">
+        <div class="confirmation-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3>Check your inbox.</h3>
+        <p>The Career Starter Guide is on its way.</p>
+        <p>If it does not arrive within a few minutes, check spam or promotions.</p>
+        <div class="next-step">
+          <a href="/#programs" class="browse-btn">See the full program suite</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>The Regulated Path · <a href="mailto:hello@regulatedpath.com">hello@regulatedpath.com</a></p>
+</footer>
+
+<script>
+(function() {
+  var form = document.getElementById('lead-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      mode: 'no-cors'
+    }).finally(function() {
+      document.body.classList.add('submitted');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
